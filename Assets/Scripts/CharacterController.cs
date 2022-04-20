@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CharacterController : MonoBehaviour
 {
@@ -10,10 +11,17 @@ public class CharacterController : MonoBehaviour
 
     private Rigidbody2D rigid_body;
 
-    // Start is called before the first frame update
+    private Vector3 respawnPoint;
+    public GameObject deathObject;
+
+
+
+    
     void Start()
     {
         rigid_body = GetComponent<Rigidbody2D>();
+        respawnPoint = transform.position;
+        
     }
 
     // Update is called once per frame
@@ -30,5 +38,15 @@ public class CharacterController : MonoBehaviour
         }
 
         animator.SetFloat("Horizontal", Input.GetAxis("Horizontal"));
+
+        
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Respawn")
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
 }
