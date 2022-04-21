@@ -15,8 +15,12 @@ public class CharacterController : MonoBehaviour
     public GameObject deathObject;
 
 
+    public GameObject loadLevel2;
 
-    
+
+
+
+
     void Start()
     {
         rigid_body = GetComponent<Rigidbody2D>();
@@ -48,5 +52,8 @@ public class CharacterController : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
+
+        if (collision.tag == "Level2Spawn")
+            SceneManager.LoadScene("Level_Two");
     }
 }
