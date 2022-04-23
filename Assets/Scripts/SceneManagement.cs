@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneManagement : MonoBehaviour
 {
-    public GameObject loadLevel2;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -20,10 +20,13 @@ public class SceneManagement : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void loadPlayerCreation()
     {
+        SceneManager.LoadScene("Player_Create_Scene");
+    }
 
-        if (collision.tag == "Level2Spawn")
-            SceneManager.LoadScene("Level_Two");
+    public void loadLevelOne()
+    {
+        SceneManager.LoadScene("Level_One_Scene");
     }
 }
