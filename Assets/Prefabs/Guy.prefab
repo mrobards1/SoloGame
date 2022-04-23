@@ -13,8 +13,7 @@ GameObject:
   - component: {fileID: 1121866789707864440}
   - component: {fileID: 1846333944710431554}
   - component: {fileID: 4465954384019643527}
-  - component: {fileID: 2349844209080433049}
-  - component: {fileID: 4621838078596783961}
+  - component: {fileID: 2829375471824313644}
   m_Layer: 0
   m_Name: Guy
   m_TagString: Player
@@ -143,33 +142,8 @@ MonoBehaviour:
   forceJump: 12
   animator: {fileID: 1121866789707864440}
   deathObject: {fileID: 0}
---- !u!61 &2349844209080433049
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 411543780340295146}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.32396445}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1.5333333}
-    newSize: {x: 1, y: 1.5333333}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 0.8854044}
-  m_EdgeRadius: 0
---- !u!58 &4621838078596783961
+  loadLevel2: {fileID: 0}
+--- !u!58 &2829375471824313644
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -182,6 +156,6 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.3386901}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.42797655
+  m_Radius: 0.76666665
