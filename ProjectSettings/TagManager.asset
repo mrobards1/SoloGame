@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Spike
   - Level2Spawn
+  - Level3Spawn
+  - EndSpawn
   layers:
   - Default
   - TransparentFX

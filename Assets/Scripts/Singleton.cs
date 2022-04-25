@@ -12,7 +12,9 @@ public class Singleton : MonoBehaviour
     public string characterName;
     public int color;
     public int difficulty;
-    
+    public bool isFilledOut;
+    public float volume;
+
 
     private void Awake()
     {

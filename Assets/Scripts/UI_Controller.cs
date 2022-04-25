@@ -25,6 +25,12 @@ public class UI_Controller : MonoBehaviour
         UIReferences();
     }
 
+    void Update()
+    {
+        isFilled();
+        toggleButton();
+    }
+
     private void UIReferences()
     {
 
@@ -40,13 +46,11 @@ public class UI_Controller : MonoBehaviour
         difficulty = GameObject.Find("Difficulty_Select").GetComponent<Dropdown>();
         difficulty.onValueChanged.AddListener(CallBack_Difficulty);
 
-       
-
     }
+
 
     
 
-   
 
 
     public void CharacterName(string characterName)
@@ -73,12 +77,28 @@ public class UI_Controller : MonoBehaviour
     }
 
     
+    public void isFilled()
+    {
+        if ((!string.IsNullOrEmpty(Singleton.Instance.characterName)) && (Singleton.Instance.color != 0) && (Singleton.Instance.difficulty != 0)) {
+            Singleton.Instance.isFilledOut = true;
+        } else
+        {
+            Singleton.Instance.isFilledOut = false;
+        }
+    }
 
-    
+    public void toggleButton()
+    {
+        Button Button_Play = GameObject.Find("Button_Create").GetComponent<Button>();
+        if (Singleton.Instance.isFilledOut == true)
+        {
+            Button_Play.interactable = true;
+        }
 
-    
+    }
 
-    
+
+
 
 
 

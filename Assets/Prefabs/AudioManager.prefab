@@ -50,3 +50,34 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
     loop: 0
+  - name: Jump
+    clip: {fileID: 8300000, guid: 0763ec3ead06541859ad6f7258476a8b, type: 3}
+    volume: 0.547
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Walk
+    clip: {fileID: 8300000, guid: 139e59f86f3a341b78d6c9e77f067bee, type: 3}
+    volume: 0.547
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Theme
+    clip: {fileID: 8300000, guid: 47f45ef7b5767674393cc401fc325705, type: 3}
+    volume: 0.547
+    pitch: 1
+    source: {fileID: 0}
+    loop: 1
+  - name: DeathMusic
+    clip: {fileID: 8300000, guid: 4be9b82284b4e4d8392cd41e1f2528fd, type: 3}
+    volume: 0.547
+    pitch: 1
+    source: {fileID: 0}
+    loop: 1
+  - name: RisingLava
+    clip: {fileID: 8300000, guid: c52dd499338854f589dfa260ee519d39, type: 3}
+    volume: 0.547
+    pitch: 1
+    source: {fileID: 0}
+    loop: 1
+  volumeSlider: {fileID: 0}
