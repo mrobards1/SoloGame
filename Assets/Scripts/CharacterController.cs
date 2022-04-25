@@ -7,12 +7,13 @@ public class CharacterController : MonoBehaviour
     public float movementSpeed;
     public float forceJump;
     public Animator animator;
-    
+
     float inputHorizontal;
 
-    
+
 
     private Rigidbody2D rigid_body;
+    private bool isMoving;
 
     private Vector3 respawnPoint;
     public GameObject deathObject;
@@ -20,6 +21,7 @@ public class CharacterController : MonoBehaviour
     public GameObject loadLevel2;
 
     public DeathMenu deathMenu;
+    public RisingPlatform risingPlatform;
 
 
 
@@ -28,20 +30,21 @@ public class CharacterController : MonoBehaviour
         rigid_body = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         respawnPoint = transform.position;
-        
+
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-        
+
+
 
         if (Input.GetButtonDown("Jump") && Mathf.Abs(rigid_body.velocity.y) < 0.001f)
         {
             rigid_body.AddForce(new Vector2(0, forceJump), ForceMode2D.Impulse);
             animator.SetBool("JumpCheck", true);
+            FindObjectOfType<AudioManager>().Play("Jump");
         } else
         {
             animator.SetBool("JumpCheck", false);
@@ -51,12 +54,15 @@ public class CharacterController : MonoBehaviour
         float moveInput = Input.GetAxisRaw("Horizontal");
         rigid_body.velocity = new Vector2(moveInput * movementSpeed, rigid_body.velocity.y);
 
+
         if (moveInput == 0)
         {
             animator.SetBool("isWalking", false);
+
         } else
         {
             animator.SetBool("isWalking", true);
+
         }
 
         if (moveInput < 0)
@@ -69,19 +75,28 @@ public class CharacterController : MonoBehaviour
             transform.eulerAngles = new Vector3(0, 0, 0);
         }
 
-        
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Respawn")
         {
+
             deathMenu.toggleDeathMenu();
+
+
         }
 
         if (collision.tag == "Level2Spawn")
-            SceneManager.LoadScene("Level_Two");
+            SceneManager.LoadScene("Level_Two_Scene");
+
+        if (collision.tag == "Level3Spawn")
+            SceneManager.LoadScene("Level_Three_Scene");
+        if (collision.tag == "EndSpawn")
+            SceneManager.LoadScene("End_Scene");
     }
+
 
 
 }
