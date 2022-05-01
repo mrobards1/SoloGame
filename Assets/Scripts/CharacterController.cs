@@ -84,7 +84,7 @@ public class CharacterController : MonoBehaviour
         {
 
             deathMenu.toggleDeathMenu();
-
+            
 
         }
 
